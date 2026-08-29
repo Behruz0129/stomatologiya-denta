@@ -98,7 +98,8 @@ export function Navbar({ locale }: { locale: Locale }) {
             href={clinic.phoneHref}
             className="btn btn-dark px-[1.1rem] py-[0.6rem] text-[0.88rem] max-[1080px]:hidden"
           >
-            {m.nav.book[locale]} <ArrowUpRight className="arrow size-[0.85em]" />
+            {m.nav.book[locale]}{" "}
+            <ArrowUpRight className="arrow size-[0.85em]" />
           </a>
 
           {/* Gamburger — faqat tor ekranda */}
@@ -110,17 +111,21 @@ export function Navbar({ locale }: { locale: Locale }) {
             aria-label={m.nav.menu[locale]}
             className="hidden size-10 shrink-0 items-center justify-center rounded-full border border-line-2 max-[1080px]:flex"
           >
+            {/* Chiziqlar `top` bilan emas, faqat transform bilan siljiydi:
+                `top` jonlantirilmaydi va krestga aylanish sakrab qolardi. */}
             <span className="relative block h-[10px] w-[18px]">
               <span
                 className={cn(
-                  "absolute left-0 block h-px w-full bg-ink transition-transform duration-400 ease-soft",
-                  open ? "top-[5px] rotate-45" : "top-0",
+                  "absolute top-0 left-0 block h-px w-full bg-ink",
+                  "transition-transform duration-500 ease-expo",
+                  open && "translate-y-[4.5px] rotate-45",
                 )}
               />
               <span
                 className={cn(
-                  "absolute left-0 block h-px w-full bg-ink transition-transform duration-400 ease-soft",
-                  open ? "top-[5px] -rotate-45" : "top-[9px]",
+                  "absolute top-[9px] left-0 block h-px w-full bg-ink",
+                  "transition-transform duration-500 ease-expo",
+                  open && "-translate-y-[4.5px] -rotate-45",
                 )}
               />
             </span>
@@ -128,41 +133,77 @@ export function Navbar({ locale }: { locale: Locale }) {
         </div>
       </Container>
 
-      {/* Menyu paneli */}
+      {/* Menyu paneli.
+
+          `hidden` emas: panel doim DOM da turadi va balandligi 0fr dan
+          1fr ga o'sadi — shu bilan ochilishi ham, yopilishi ham silliq.
+          Yopiq turganda `inert` uni klaviatura va skrindan olib qo'yadi. */}
       <div
         id="mobile-menu"
-        hidden={!open}
-        className="hidden border-t border-line bg-paper max-[1080px]:block"
+        inert={!open}
+        className={cn(
+          "hidden bg-paper max-[1080px]:grid",
+          "transition-[grid-template-rows,opacity] duration-500 ease-expo",
+          open
+            ? "grid-rows-[1fr] border-t border-line opacity-100"
+            : "grid-rows-[0fr] opacity-0",
+        )}
       >
-        <Container className="flex flex-col gap-1 py-5">
-          {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="border-b border-line py-3 text-[1.05rem]"
-            >
-              {link.label[locale]}
-            </a>
-          ))}
+        {/* Chetlar (`py-5`) ichkariga olindi: ular tashqi elementda
+            qolsa, qator `0fr` bo'lganda ham 40px joy egallardi. */}
+        <div className="min-h-0 overflow-hidden">
+          <Container className="flex flex-col gap-1 py-5">
+            {LINKS.map((link, i) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                /* Havolalar birin-ketin chiqadi; yopilganda esa hammasi
+                 birdan ketadi, aks holda yopilish cho'zilib ketardi. */
+                style={{ transitionDelay: open ? `${90 + i * 45}ms` : "0ms" }}
+                className={cn(
+                  "border-b border-line py-3 text-[1.05rem]",
+                  "transition-[opacity,transform] duration-500 ease-expo",
+                  open
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-2 opacity-0",
+                )}
+              >
+                {link.label[locale]}
+              </a>
+            ))}
 
-          <div className="mt-4 flex flex-col gap-2">
-            <a href={clinic.phoneHref} className="btn btn-dark justify-center">
-              {m.nav.book[locale]} <ArrowUpRight className="arrow size-[0.85em]" />
-            </a>
-            <a
-              href={clinic.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-ghost justify-center"
+            <div
+              style={{
+                transitionDelay: open ? `${90 + LINKS.length * 45}ms` : "0ms",
+              }}
+              className={cn(
+                "mt-4 flex flex-col gap-2",
+                "transition-[opacity,transform] duration-500 ease-expo",
+                open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+              )}
             >
-              WhatsApp
-            </a>
-            <span className="mt-1 text-center text-[0.9rem] text-muted">
-              {clinic.phone}
-            </span>
-          </div>
-        </Container>
+              <a
+                href={clinic.phoneHref}
+                className="btn btn-dark justify-center"
+              >
+                {m.nav.book[locale]}{" "}
+                <ArrowUpRight className="arrow size-[0.85em]" />
+              </a>
+              <a
+                href={clinic.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost justify-center"
+              >
+                WhatsApp
+              </a>
+              <span className="mt-1 text-center text-[0.9rem] text-muted">
+                {clinic.phone}
+              </span>
+            </div>
+          </Container>
+        </div>
       </div>
     </header>
   );

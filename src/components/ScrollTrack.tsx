@@ -14,6 +14,18 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
  */
 const MIN_PIN = 200;
 
+/*
+ * Kartalar bo'lim ekran tepasiga qadalguncha - u hali o'rtada turganda -
+ * sura boshlaydi. Aks holda hech narsa qimirlamay turib, keyin birdan
+ * yon tomonga otilardi.
+ *
+ * Ulush ekran balandligidan olinadi, lekin gorizontal ortiqchaning
+ * yarmidan oshmaydi: qisqa treklarda butun harakat qadalishdan oldin
+ * tugab qolmasin.
+ */
+const LEAD_VH = 0.5;
+const LEAD_MAX_SHARE = 0.45;
+
 export function ScrollTrack({
   heading,
   children,
@@ -29,6 +41,8 @@ export function ScrollTrack({
 
   const [overflow, setOverflow] = useState(0);
   const [stickyHeight, setStickyHeight] = useState(0);
+  /** Qadalishdan oldin sarflanadigan skroll — harakatning boshlanishi. */
+  const [lead, setLead] = useState(0);
 
   const pinned = overflow >= MIN_PIN && stickyHeight > 0;
 
@@ -46,8 +60,14 @@ export function ScrollTrack({
         setOverflow(0);
         return;
       }
-      setOverflow(Math.max(trackEl.scrollWidth - trackEl.clientWidth, 0));
+      const over = Math.max(trackEl.scrollWidth - trackEl.clientWidth, 0);
+      setOverflow(over);
       setStickyHeight(stickyEl.offsetHeight);
+      setLead(
+        Math.round(
+          Math.min(window.innerHeight * LEAD_VH, over * LEAD_MAX_SHARE),
+        ),
+      );
     };
 
     measure();
@@ -78,7 +98,7 @@ export function ScrollTrack({
       if (!outerEl || !trackEl) return;
 
       const passed = Math.min(
-        Math.max(-outerEl.getBoundingClientRect().top, 0),
+        Math.max(lead - outerEl.getBoundingClientRect().top, 0),
         overflow,
       );
       trackEl.style.transform = `translate3d(${-passed}px, 0, 0)`;
@@ -97,13 +117,15 @@ export function ScrollTrack({
       window.removeEventListener("resize", onScroll);
       if (frame !== null) cancelAnimationFrame(frame);
     };
-  }, [pinned, overflow]);
+  }, [pinned, overflow, lead]);
 
   return (
     <div
       ref={outer}
       className="relative"
-      style={pinned ? { height: stickyHeight + overflow } : undefined}
+      style={
+        pinned ? { height: stickyHeight + overflow - lead } : undefined
+      }
     >
       <div
         ref={sticky}
