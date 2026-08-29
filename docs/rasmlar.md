@@ -4,12 +4,12 @@ Fayllar `public/img/` ga tashlanadi. Nomi aynan `F1.jpg` ko'rinishida.
 Rasm yo'q bo'lsa o'rnida kulrang blok va kodi turadi — sayt buzilmaydi.
 
 Har bir kod **faqat bitta joyda** ishlatiladi — bitta rasm ikki bo'limda
-takrorlanmaydi. Jami **F1–F24**.
+takrorlanmaydi. Jami **F1–F22**.
 
 ## Hozirgi holat
 
-- **Bor:** F1 … F12
-- **Yetishmaydi:** F13 … F24
+- **Bor:** F1 … F22 — hammasi joyida.
+- Manzil bo'limida foto emas, Yandex xarita vidjeti turadi.
 
 ## Umumiy qoidalar
 
@@ -46,7 +46,6 @@ takrorlanmaydi. Jami **F1–F24**.
 | F20 | Shifokor | 3:4 | 900×1200 | 2-shifokor |
 | F21 | Shifokor | 3:4 | 900×1200 | 3-shifokor |
 | F22 | Shifokor | 3:4 | 900×1200 | 4-shifokor |
-| F24 | Manzil | 16:10 | 1400×875 | Bino tashqi ko'rinishi |
 
 ## Sun'iy intellekt rasmi — chegara
 
@@ -57,8 +56,6 @@ Bular **haqiqiy** bo'lishi shart, generatsiya qilinmaydi:
 - **F17/F18 (oldin/keyin).** To'qilgan davolash natijasi tibbiy saytda
   jiddiy chalg'itish. Haqiqiy bemorning yozma roziligi bilan olingan
   surati kerak. Bo'lmasa — bo'limni olib tashlash kerak.
-- **F24 (bino).** Manzil bo'limida turadi. Boshqa binoni o'ziniki deb
-  ko'rsatib bo'lmaydi. Telefonda bir marta olsa yetadi.
 
 **F14 (bola qabulda)** ham ehtiyot talab qiladi: agar unda haqiqiy bolaning
 yuzi ko'rinsa — ota-onasidan yozma rozilik kerak. Sun'iy rasmda esa yuz
@@ -116,14 +113,6 @@ shallow depth of field, faces not visible, no brand markings on the
 terminal
 ```
 
-### F24 — bino tashqi ko'rinishi · 16:10 (faqat vaqtinchalik)
-
-```
-Horizontal 16:10. Ground floor entrance of a small medical clinic on a
-city street, glass door and windows, light stone facade, daytime, soft
-overcast light, no signage text, 35mm
-```
-
 ### F1–F12 (allaqachon bor — qayta yasash kerak bo'lsa)
 
 - **F1 · 4:5** — `Vertical 4:5. Extreme close-up of a natural adult smile, healthy white teeth, relaxed lips, soft diffused daylight, macro 100mm at f/4, shallow depth of field, blurred neutral background, real skin texture`
@@ -141,7 +130,7 @@ overcast light, no signage text, 35mm
 
 ## Shifokor portretlari (F19–F22) — suratga olish tartibi
 
-Beshalasi bir kunda, bir joyda olinsin:
+To'rttasi bir kunda, bir joyda olinsin:
 
 - **Fon:** klinikaning bir tekis oq yoki sutrang devori.
 - **Yorug'lik:** katta deraza yonida, yon tomondan. Vspishka yo'q.
