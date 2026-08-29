@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import sharp from "sharp";
+
 
 /*
  * Ijtimoiy tarmoq kartochkasini (Open Graph) yasaydi.
@@ -9,8 +9,22 @@ import sharp from "sharp";
  * PNG da bir necha barobar og'ir bo'ladi. Shuning uchun rasm bir marta
  * shu yerda yig'iladi va tayyor JPEG bo'lib turadi.
  *
- * Foto o'zgarsa qayta ishga tushiring:  npm run og
+ * Foto o'zgarsa qayta ishga tushiring:
+ *   npm i -D sharp && npm run og
+ *
+ * `sharp` ataylab doimiy bog'liqlikda emas: u faqat shu skriptga kerak,
+ * saytni yig'ishda umuman ishlatilmaydi. Uni doimiy qilib qo'ysak,
+ * Vercel o'rnatish skriptini o'tkazib yuborib, native kutubxonasiz
+ * sharp qoldiradi va build yiqiladi.
  */
+
+let sharp;
+try {
+  sharp = (await import("sharp")).default;
+} catch {
+  console.error("sharp o'rnatilmagan. Avval:  npm i -D sharp");
+  process.exit(1);
+}
 
 const ROOT = process.cwd();
 const SOURCE = path.join(ROOT, "public", "img", "F1.jpg");
