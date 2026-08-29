@@ -91,8 +91,8 @@ export const m = {
     title: { uz: "Kim ", ru: "Кто " },
     titleAccent: { uz: "qabul qiladi", ru: "принимает" },
     admin: {
-      uz: "Qabulni administrator Tohir yozadi — qo'ng'iroqqa va yozuvga u javob beradi.",
-      ru: "Записывает администратор Тахир — он отвечает на звонки и сообщения.",
+      uz: "Qabulni administrator yozadi — qo'ng'iroqqa va yozuvga u javob beradi.",
+      ru: "Записывает администратор — он отвечает на звонки и сообщения.",
     },
   },
 

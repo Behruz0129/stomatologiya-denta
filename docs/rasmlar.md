@@ -42,19 +42,18 @@ takrorlanmaydi. Jami **F1–F24**.
 | F16 | «Nimasi boshqacha» 4 — to'lov | 4:5 | 1000×1250 | Karta bilan to'lov |
 | F17 | Oldin/keyin — chap | 16:10 | 1600×1000 | Davolashdan oldin |
 | F18 | Oldin/keyin — o'ng | 16:10 | 1600×1000 | Davolashdan keyin |
-| F19 | Shifokor | 3:4 | 900×1200 | Maftuna |
-| F20 | Shifokor | 3:4 | 900×1200 | Saida |
-| F21 | Shifokor | 3:4 | 900×1200 | Dmitriy |
-| F22 | Shifokor | 3:4 | 900×1200 | Abror |
-| F23 | Shifokor | 3:4 | 900×1200 | Laziz |
+| F19 | Shifokor | 3:4 | 900×1200 | 1-shifokor |
+| F20 | Shifokor | 3:4 | 900×1200 | 2-shifokor |
+| F21 | Shifokor | 3:4 | 900×1200 | 3-shifokor |
+| F22 | Shifokor | 3:4 | 900×1200 | 4-shifokor |
 | F24 | Manzil | 16:10 | 1400×875 | Bino tashqi ko'rinishi |
 
 ## Sun'iy intellekt rasmi — chegara
 
 Bular **haqiqiy** bo'lishi shart, generatsiya qilinmaydi:
 
-- **F19–F23 (shifokorlar).** Saytda ularning ismi yozib qo'yilgan.
-  To'qilgan portretni haqiqiy xodim deb ko'rsatish — yolg'on.
+- **F19–F22 (shifokorlar).** Haqiqiy xodimlarning surati bo'lishi shart.
+  Ism ham, surat ham taxminiy bo'lmasin — bu shifokorga hurmatsizlik.
 - **F17/F18 (oldin/keyin).** To'qilgan davolash natijasi tibbiy saytda
   jiddiy chalg'itish. Haqiqiy bemorning yozma roziligi bilan olingan
   surati kerak. Bo'lmasa — bo'limni olib tashlash kerak.
@@ -140,7 +139,7 @@ overcast light, no signage text, 35mm
 - **F11 · 1:1** — `Square 1:1. Bright children's corner in a dental clinic waiting area, small wooden table and chairs, soft cushions, a few simple toys, daylight from a window, cheerful but calm, no people, 35mm`
 - **F12 · 3:4** — `Vertical 3:4. Modern panoramic dental X-ray machine in a clean clinic room, off-white walls, soft daylight, no people, no brand markings, 35mm`
 
-## Shifokor portretlari (F19–F23) — suratga olish tartibi
+## Shifokor portretlari (F19–F22) — suratga olish tartibi
 
 Beshalasi bir kunda, bir joyda olinsin:
 

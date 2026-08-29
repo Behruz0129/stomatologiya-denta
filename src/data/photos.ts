@@ -46,10 +46,10 @@ export const photoBrief: Record<PhotoSlot, L> = {
   F18: { uz: "Davolashdan keyin", ru: "После лечения" },
 
   // Shifokorlar.
-  F19: { uz: "Dmitriy", ru: "Дмитрий" },
-  F20: { uz: "Abror", ru: "Аброр" },
-  F21: { uz: "Laziz", ru: "Лазиз" },
-  F22: { uz: "To'rtinchi shifokor", ru: "Четвёртый врач" },
+  F19: { uz: "1-shifokor", ru: "Врач 1" },
+  F20: { uz: "2-shifokor", ru: "Врач 2" },
+  F21: { uz: "3-shifokor", ru: "Врач 3" },
+  F22: { uz: "4-shifokor", ru: "Врач 4" },
 
   // Manzil bo'limida xarita vidjeti turadi - u yerga foto kerak emas.
 

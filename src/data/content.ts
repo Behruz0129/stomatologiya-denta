@@ -90,25 +90,26 @@ export const steps: { title: L; text: L }[] = [
  * Familiyalar hech qayerda yo'q. Mijoz tasdiqlagach to'ldiriladi.
  */
 export const team: { photo: PhotoSlot; name: L; role: L }[] = [
+  // Ismlar ataylab bo'sh: taxminiy ism yozish shifokorga hurmatsizlik
+  // bo'ladi. Mijoz to'liq ism va yo'nalishni bergach to'ldiriladi.
   {
     photo: "F19",
-    name: { uz: "Dmitriy", ru: "Дмитрий" },
+    name: { uz: "Shifokorning ismi", ru: "Имя врача" },
     role: { uz: "Stomatolog", ru: "Стоматолог" },
   },
   {
     photo: "F20",
-    name: { uz: "Abror", ru: "Аброр" },
+    name: { uz: "Shifokorning ismi", ru: "Имя врача" },
     role: { uz: "Stomatolog", ru: "Стоматолог" },
   },
   {
     photo: "F21",
-    name: { uz: "Laziz", ru: "Лазиз" },
-    role: { uz: "Bolalar stomatologi", ru: "Детский стоматолог" },
+    name: { uz: "Shifokorning ismi", ru: "Имя врача" },
+    role: { uz: "Stomatolog", ru: "Стоматолог" },
   },
   {
-    // TODO: to'rtinchi shifokorning ismi va yo'nalishi mijozdan olinsin.
     photo: "F22",
-    name: { uz: "Ism kerak", ru: "Нужно имя" },
+    name: { uz: "Shifokorning ismi", ru: "Имя врача" },
     role: { uz: "Stomatolog", ru: "Стоматолог" },
   },
 ];
@@ -136,12 +137,12 @@ export const reviews: Review[] = [
   {
     text: {
       uz: "Biz ancha qidirib yaxshi mutaxassislarni ahiri Dentaga murojaat qildik juda a'lo darajada meni va oyila a'zolarimni tishlarini davolashdi.",
-      ru: "Уже год лечусь у врача Лазиза. С ним страх стоматологов прошёл: спокойно объясняет, спрашивает об ощущениях и работает не спеша.",
+      ru: "Мне ставили брекеты, удаляли зуб, ставили пломбы — и всё прошло на высшем уровне.",
     },
-    author: { uz: "Zafar Soipov", ru: "Мадина Кадырова" },
+    author: { uz: "Zafar Soipov", ru: "Анастасия Кочубей" },
     source: {
       uz: "Yandex Maps · 27.11.2025",
-      ru: "Yandex Maps · 15.11.2025",
+      ru: "Yandex Maps · 24.04.2025",
     },
   },
   {
