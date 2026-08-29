@@ -10,6 +10,7 @@ export const m = {
     reviews: { uz: "Sharhlar", ru: "Отзывы" },
     visit: { uz: "Manzil", ru: "Адрес" },
     book: { uz: "Qabulga yozilish", ru: "Записаться" },
+    menu: { uz: "Menyu", ru: "Меню" },
   },
 
   hero: {

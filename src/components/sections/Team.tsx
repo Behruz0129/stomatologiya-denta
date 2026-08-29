@@ -4,19 +4,18 @@ import { useState } from "react";
 import { Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { Photo } from "@/components/Photo";
-import { cn } from "@/lib/cn";
+import { Carousel } from "@/components/Carousel";
 import { team } from "@/data/content";
 import { m } from "@/messages";
 import type { Locale } from "@/lib/i18n";
 
 /*
- * Kartalar pastki chiziqqa tekislanadi (`items-end`), shuning uchun faol
- * karta yuqoriga qarab o'sadi - pastga emas. Yonidagilar esa shu chiziqdan
- * bir oz ko'tarilib turadi, natijada qator "pastdan tepaga" qaraydi.
+ * Keng ekranda — sichqoncha kelgan karta kengayadi, qolganlari torayadi
+ * va doim bittasi ochiq turadi, shuning uchun bo'lim balandligi sakramaydi.
  *
- * Kenglik va balandlik alohida boshqariladi: `aspect-ratio` bo'lsa kenglik
- * ortishi bilan balandlik ham ortib, karta haddan tashqari kattayib
- * ketardi.
+ * Tor ekranda — karusel. Karta kengligi 72% qilib olingan va markazga
+ * tekislanadi: yon tomonlarda qo'shni kartalarning bir qismi ko'rinib
+ * turadi, ya'ni surish mumkinligi o'zidan ma'lum bo'ladi.
  */
 const ACTIVE_GROW = 1.55;
 const IDLE_GROW = 1;
@@ -36,7 +35,11 @@ export function Team({ locale }: { locale: Locale }) {
         accent={m.team.titleAccent}
       />
 
-      <div className="team-row flex items-end gap-5 max-[900px]:grid max-[900px]:grid-cols-2 max-[620px]:grid-cols-1">
+      <Carousel
+        label={m.team.eyebrow[locale]}
+        trackClassName="team-row scroll-px-[14%] min-[901px]:flex min-[901px]:items-end min-[901px]:overflow-visible min-[901px]:snap-none min-[901px]:scroll-px-0 min-[901px]:pb-0"
+        controlsClassName="min-[901px]:hidden"
+      >
         {team.map((doctor, i) => {
           const isActive = i === active;
           return (
@@ -45,46 +48,44 @@ export function Team({ locale }: { locale: Locale }) {
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               style={{ flexGrow: isActive ? ACTIVE_GROW : IDLE_GROW }}
-              className="flex min-w-0 basis-0 flex-col gap-3 transition-[flex-grow] duration-[650ms] ease-soft max-[900px]:basis-auto"
+              className="w-[72%] shrink-0 snap-center min-[901px]:w-auto min-[901px]:min-w-0 min-[901px]:shrink min-[901px]:basis-0"
             >
-              <Reveal index={i}>
+              <Reveal index={i} className="flex flex-col gap-3">
                 <div
                   style={{
                     height: isActive ? ACTIVE_H : IDLE_H,
                     marginBottom: isActive ? 0 : 18,
                   }}
-                  className="transition-[height,margin-bottom] duration-[650ms] ease-soft max-[900px]:!mb-0 max-[900px]:!h-auto"
+                  className="max-[900px]:!mb-0 max-[900px]:!h-auto min-[901px]:transition-[height,margin-bottom] min-[901px]:duration-[650ms] min-[901px]:ease-soft"
                 >
                   <Photo
                     slot={doctor.photo}
                     locale={locale}
-                    sizes="(max-width: 900px) 50vw, 40vw"
+                    sizes="(max-width: 900px) 72vw, 40vw"
                     className="h-full max-[900px]:aspect-[3/4]"
                   />
                 </div>
-              </Reveal>
 
-              {/* Faqat faol shifokorning ma'lumoti. Joyi doim band -
-                  shuning uchun almashganda pastdagi matn sakramaydi. */}
-              <div
-                className={cn(
-                  "flex min-h-[3rem] flex-col gap-0.5 transition-opacity duration-500 ease-soft",
-                  isActive ? "opacity-100" : "opacity-0 max-[900px]:opacity-100",
-                )}
-              >
-                <b className="text-[1.02rem] font-medium">
-                  {doctor.name[locale]}
-                </b>
-                <span className="label">{doctor.role[locale]}</span>
-              </div>
+                <div
+                  className={
+                    "flex min-h-[3rem] flex-col gap-0.5 transition-opacity duration-500 ease-soft " +
+                    (isActive ? "opacity-100" : "opacity-0 max-[900px]:opacity-100")
+                  }
+                >
+                  <b className="text-[1.02rem] font-medium max-[620px]:text-[0.96rem]">
+                    {doctor.name[locale]}
+                  </b>
+                  <span className="label">{doctor.role[locale]}</span>
+                </div>
+              </Reveal>
             </div>
           );
         })}
-      </div>
+      </Carousel>
 
       <Reveal
         as="p"
-        className="mt-4 max-w-[54ch] border-t border-line pt-[1.3rem] text-[0.9rem] text-muted"
+        className="mt-2 max-w-[54ch] border-t border-line pt-[1.3rem] text-[0.9rem] text-muted"
       >
         {m.team.admin[locale]}
       </Reveal>

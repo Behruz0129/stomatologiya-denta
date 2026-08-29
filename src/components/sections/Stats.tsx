@@ -15,17 +15,17 @@ export function Stats({ locale }: { locale: Locale }) {
               index={i}
               className="flex flex-col gap-[0.15rem]"
             >
-              <b className="text-[2.1rem] leading-[1.1] tracking-[-0.045em]">
+              <b className="text-[clamp(2.1rem,7vw,2.6rem)] leading-[1.05] tracking-[-0.045em]">
                 <CountUp
                   to={stat.to}
                   decimals={stat.decimals}
                   suffix={stat.suffix}
                 />
               </b>
-              <span className="text-[0.9rem] text-ink-2">
+              <span className="text-[0.82rem] leading-snug text-ink-2">
                 {stat.label[locale]}
               </span>
-              <span className="label mt-[0.2rem]">{stat.source[locale]}</span>
+              <span className="label mt-[0.25rem] text-[0.62rem]">{stat.source[locale]}</span>
             </Reveal>
           ))}
         </div>

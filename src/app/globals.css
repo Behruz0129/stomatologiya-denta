@@ -88,6 +88,19 @@
     outline: 2px solid var(--color-ink);
     outline-offset: 3px;
   }
+  /* Tor ekranda matn va harf oraligi biroz ixchamroq. */
+  @media (max-width: 620px) {
+    body {
+      font-size: 15px;
+    }
+    h1 {
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      letter-spacing: -0.035em;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -201,11 +214,8 @@
    Shifokorlar qatori: balandligi qat'iy. Kartalar kengayib-torayganda
    bo'lim o'zi cho'zilib-qisqarmasin - sahifa sakramaydi.
 ------------------------------------------------------------------- */
-.team-row {
-  height: calc(clamp(230px, 30vw, 380px) + 3.75rem);
-}
-@media (max-width: 900px) {
+@media (min-width: 901px) {
   .team-row {
-    height: auto;
+    height: calc(clamp(230px, 30vw, 380px) + 3.75rem);
   }
 }

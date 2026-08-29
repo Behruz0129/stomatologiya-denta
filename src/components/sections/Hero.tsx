@@ -15,7 +15,7 @@ export function Hero({ locale }: { locale: Locale }) {
             <span className="label">{m.hero.badge[locale]}</span>
           </Reveal>
 
-          <Reveal as="h1" index={1} step={130} className="text-[clamp(2.4rem,4.6vw,3.5rem)]">
+          <Reveal as="h1" index={1} step={130} className="text-[clamp(1.95rem,6.4vw,3.5rem)]">
             {m.hero.titleStart[locale]}
             <span className="accent">{m.hero.titleAccent[locale]}</span>
             {m.hero.titleEnd[locale]}

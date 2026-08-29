@@ -74,7 +74,7 @@ export function WhyUs({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        <Reveal className="sticky top-24 max-[900px]:static">
+        <Reveal className="sticky top-24 max-[900px]:static max-[900px]:order-first max-[900px]:mb-8">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] max-[900px]:aspect-[16/10]">
             {whyRows.map((row, i) => (
               <div

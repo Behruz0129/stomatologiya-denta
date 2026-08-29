@@ -113,9 +113,28 @@ export function HeroPhoto({ locale }: { locale: Locale }) {
   const ring = "shadow-[0_0_0_10px_#fff,var(--shadow-frame)]";
 
   return (
+    <>
+      {/* Tor ekran: xira fon va oyna o'rniga oddiy katta foto.
+          Barmoq bilan oyna surish qulay emas, shuning uchun u yerda
+          suratning o'zi ko'rsatiladi. */}
+      <div className="min-[901px]:hidden">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-fill">
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            priority
+            draggable={false}
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <p className="label mt-4 text-center">{m.hero.lensCaption[locale]}</p>
+      </div>
+
     <div
       ref={frame}
-      className="relative aspect-[5/6] cursor-crosshair overflow-hidden rounded-[var(--radius-card)] bg-fill select-none"
+      className="relative aspect-[5/6] cursor-crosshair overflow-hidden rounded-[var(--radius-card)] bg-fill select-none max-[900px]:hidden"
     >
       <Image
         src={src}
@@ -171,5 +190,6 @@ export function HeroPhoto({ locale }: { locale: Locale }) {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -21,7 +21,7 @@ export function Statement({ locale }: { locale: Locale }) {
         />
 
         <div className="flex flex-col items-center gap-8 text-center">
-          <h2 className="max-w-[20ch] text-[clamp(1.7rem,3.4vw,2.6rem)]">
+          <h2 className="max-w-[20ch] text-[clamp(1.45rem,4.6vw,2.6rem)]">
             <span className="accent">{m.statement.a[locale]}</span>
             {m.statement.b[locale]}
             <span className="accent">{m.statement.c[locale]}</span>

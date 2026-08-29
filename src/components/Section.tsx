@@ -11,7 +11,7 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={cn("mx-auto w-[min(var(--container-frame),100%-2.5rem)] max-[620px]:w-[min(var(--container-frame),100%-1.6rem)]", className)}>
+    <div className={cn("mx-auto w-[min(var(--container-frame),100%-2.5rem)] max-[620px]:w-[min(var(--container-frame),100%-2.5rem)]", className)}>
       {children}
     </div>
   );
@@ -71,7 +71,7 @@ export function SectionHeading({
       )}
     >
       <span className="label">{eyebrow[locale]}</span>
-      <h2 className="text-[clamp(1.95rem,3.7vw,3.15rem)]">
+      <h2 className="text-[clamp(1.65rem,5.4vw,3.15rem)]">
         {title[locale]}
         <span className="accent">{accent[locale]}</span>
       </h2>
