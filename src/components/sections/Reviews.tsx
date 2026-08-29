@@ -8,17 +8,22 @@ import { reviews } from "@/data/content";
 import { clinic } from "@/data/clinic";
 import { m } from "@/messages";
 import type { Locale } from "@/lib/i18n";
+import { ArrowUpRight } from "@/components/icons";
 
 /*
  * Keng ekranda uchala sharh yonma-yon turadi.
  *
- * Tor ekranda ular ustma-ust qalanadi: faoli tepada, keyingisi biroz
- * pastda va kichrayib ortida ko'rinadi — ya'ni yana sharh borligi
- * o'zidan ma'lum. Pastdagi nuqtalar bilan almashadi.
- *
- * Kartalar mutlaq joylashgani uchun konteynerga eng uzun sharh sig'adigan
- * balandlik berilgan.
+ * Tor ekranda ular qalab qo'yilgan kartalardek turadi: orqadagilar biroz
+ * burilgan va pastga surilgan, shuning uchun ularning cheti ko'rinib
+ * qoladi. Shaffoflik bilan xiralashtirilmaydi — burchagi ko'rinib turgani
+ * ortida yana sharh borligini o'zi aytadi.
  */
+const STACK = [
+  "translateY(0) rotate(0deg) scale(1)",
+  "translateY(15px) rotate(-2.4deg) scale(0.975)",
+  "translateY(28px) rotate(1.8deg) scale(0.95)",
+];
+
 export function Reviews({ locale }: { locale: Locale }) {
   const [active, setActive] = useState(0);
 
@@ -32,29 +37,26 @@ export function Reviews({ locale }: { locale: Locale }) {
       />
 
       <Reveal>
-        <div className="relative min-h-[340px] max-[900px]:mb-2 min-[901px]:grid min-[901px]:min-h-0 min-[901px]:grid-cols-3 min-[901px]:gap-[1.1rem]">
+        <div className="relative min-h-[360px] max-[900px]:mb-4 min-[901px]:grid min-[901px]:min-h-0 min-[901px]:grid-cols-3 min-[901px]:gap-[1.1rem]">
           {reviews.map((review, i) => {
             const offset = (i - active + reviews.length) % reviews.length;
+            const depth = Math.min(offset, STACK.length - 1);
+
             return (
               <figure
                 key={review.author.uz}
                 aria-hidden={offset !== 0 ? true : undefined}
                 style={{
-                  transform:
-                    offset === 0
-                      ? "translateY(0) scale(1)"
-                      : `translateY(${Math.min(offset, 2) * 14}px) scale(${1 - Math.min(offset, 2) * 0.04})`,
-                  zIndex: reviews.length - Math.min(offset, 2),
+                  transform: STACK[depth],
+                  zIndex: STACK.length - depth,
                 }}
                 className={cn(
                   "flex flex-col gap-[1.1rem] rounded-[var(--radius-card)] border border-line bg-card p-7",
                   "max-[900px]:absolute max-[900px]:inset-x-0 max-[900px]:top-0",
-                  "max-[900px]:transition-[transform,opacity] max-[900px]:duration-500 max-[900px]:ease-soft",
-                  offset === 0
-                    ? "max-[900px]:opacity-100"
-                    : "pointer-events-none max-[900px]:opacity-40",
-                  offset > 1 && "max-[900px]:opacity-0",
-                  "min-[901px]:static min-[901px]:!translate-y-0 min-[901px]:!scale-100 min-[901px]:opacity-100",
+                  "max-[900px]:transition-transform max-[900px]:duration-500 max-[900px]:ease-soft",
+                  offset !== 0 && "pointer-events-none",
+                  offset > 2 && "max-[900px]:opacity-0",
+                  "min-[901px]:static min-[901px]:!transform-none min-[901px]:opacity-100",
                 )}
               >
                 <span
@@ -78,7 +80,7 @@ export function Reviews({ locale }: { locale: Locale }) {
         </div>
 
         {/* Nuqtalar — faqat tor ekranda */}
-        <div className="mt-6 flex justify-center gap-2 min-[901px]:hidden">
+        <div className="mt-8 flex justify-center gap-2 min-[901px]:hidden">
           {reviews.map((review, i) => (
             <button
               key={review.author.uz}
@@ -102,7 +104,7 @@ export function Reviews({ locale }: { locale: Locale }) {
           rel="noopener noreferrer"
           className="btn btn-ghost max-[620px]:w-full max-[620px]:justify-center"
         >
-          {m.reviews.all[locale]} <span className="arrow">↗</span>
+          {m.reviews.all[locale]} <ArrowUpRight className="arrow size-[0.85em]" />
         </a>
       </Reveal>
     </Section>

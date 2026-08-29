@@ -1,4 +1,5 @@
 import { Section } from "@/components/Section";
+import { ArrowUpRight } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { Photo } from "@/components/Photo";
 import { m } from "@/messages";
@@ -29,7 +30,7 @@ export function Statement({ locale }: { locale: Locale }) {
           </h2>
 
           <a href="#xizmatlar" className="btn btn-dark">
-            {m.statement.cta[locale]} <span className="arrow">&#8599;</span>
+            {m.statement.cta[locale]} <ArrowUpRight className="arrow size-[0.85em]" />
           </a>
         </div>
 

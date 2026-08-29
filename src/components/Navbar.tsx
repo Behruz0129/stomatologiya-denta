@@ -9,6 +9,7 @@ import { Logo } from "@/components/Logo";
 import { clinic } from "@/data/clinic";
 import { m } from "@/messages";
 import type { Locale } from "@/lib/i18n";
+import { ArrowUpRight } from "@/components/icons";
 
 const LINKS = [
   { href: "#xizmatlar", label: m.nav.services },
@@ -97,7 +98,7 @@ export function Navbar({ locale }: { locale: Locale }) {
             href={clinic.phoneHref}
             className="btn btn-dark px-[1.1rem] py-[0.6rem] text-[0.88rem] max-[1080px]:hidden"
           >
-            {m.nav.book[locale]} <span className="arrow">↗</span>
+            {m.nav.book[locale]} <ArrowUpRight className="arrow size-[0.85em]" />
           </a>
 
           {/* Gamburger — faqat tor ekranda */}
@@ -147,7 +148,7 @@ export function Navbar({ locale }: { locale: Locale }) {
 
           <div className="mt-4 flex flex-col gap-2">
             <a href={clinic.phoneHref} className="btn btn-dark justify-center">
-              {m.nav.book[locale]} <span className="arrow">↗</span>
+              {m.nav.book[locale]} <ArrowUpRight className="arrow size-[0.85em]" />
             </a>
             <a
               href={clinic.whatsapp}

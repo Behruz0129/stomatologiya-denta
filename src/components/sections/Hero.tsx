@@ -1,4 +1,5 @@
 import { Container } from "@/components/Section";
+import { ArrowUpRight } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { HeroPhoto } from "@/components/HeroPhoto";
 import { clinic } from "@/data/clinic";
@@ -27,7 +28,7 @@ export function Hero({ locale }: { locale: Locale }) {
 
           <Reveal index={3} step={130} className="flex flex-wrap gap-[0.7rem]">
             <a href={clinic.phoneHref} className="btn btn-dark">
-              {m.nav.book[locale]} <span className="arrow">&#8599;</span>
+              {m.nav.book[locale]} <ArrowUpRight className="arrow size-[0.85em]" />
             </a>
             <a href="#narxlar" className="btn btn-ghost">
               {m.hero.seePrices[locale]}
