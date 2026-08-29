@@ -80,7 +80,11 @@ export function Visit({ locale }: { locale: Locale }) {
           </Reveal>
 
           <Reveal className="max-[900px]:order-first">
-            <YandexMap title={m.visit.title[locale] + m.visit.titleAccent[locale]} />
+            <YandexMap
+              title={m.visit.title[locale] + m.visit.titleAccent[locale]}
+              action={m.visit.mapLoad[locale]}
+              note={m.visit.mapNote[locale]}
+            />
           </Reveal>
         </div>
       </Container>

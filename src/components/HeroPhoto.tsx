@@ -125,7 +125,7 @@ export function HeroPhoto({ locale }: { locale: Locale }) {
             fill
             priority
             draggable={false}
-            sizes="100vw"
+            sizes="92vw"
             className="object-cover"
           />
         </div>

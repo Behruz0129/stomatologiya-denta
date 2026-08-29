@@ -106,6 +106,14 @@ export const m = {
     title: { uz: "Bemorlar ", ru: "Что говорят " },
     titleAccent: { uz: "nima deydi", ru: "пациенты" },
     all: { uz: "285 ta sharhning hammasi", ru: "Все 285 отзывов" },
+    allLead: {
+      uz: "Bularning hammasi Yandex xaritasida — o'zgartirib bo'lmaydi.",
+      ru: "Все они на Яндекс Картах — мы их не редактируем.",
+    },
+    swipe: {
+      uz: "Kartani yonga suring",
+      ru: "Смахните карточку в сторону",
+    },
   },
 
   faq: {
@@ -124,6 +132,11 @@ export const m = {
     phone: { uz: "Telefon", ru: "Телефон" },
     call: { uz: "Qo'ng'iroq qilish", ru: "Позвонить" },
     openMap: { uz: "Xaritada ochish", ru: "Открыть на карте" },
+    mapLoad: { uz: "Xaritani yuklash", ru: "Загрузить карту" },
+    mapNote: {
+      uz: "Xarita Yandex'dan yuklanadi",
+      ru: "Карта загрузится с Яндекса",
+    },
   },
 
   footer: {

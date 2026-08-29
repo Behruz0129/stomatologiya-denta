@@ -16,7 +16,11 @@
   --color-line-2: rgb(0 0 0 / 0.16);
   --color-ink: #000000;
   --color-ink-2: rgb(0 0 0 / 0.66);
-  --color-muted: rgb(0 0 0 / 0.4);
+  /* 0.56 — tasodifiy son emas: oq va --color-paper ustida ham matn
+     kontrasti 4.5:1 dan o'tadi (WCAG AA, kichik matn uchun). Oldingi
+     0.4 da u 2.8:1 edi va Lighthouse butun sahifada 26 ta xato
+     ko'rsatardi. */
+  --color-muted: rgb(0 0 0 / 0.56);
   --color-dim: rgb(255 255 255 / 0.5); /* to'q fon ustida */
 
   --font-sans: var(--font-inter), "Helvetica Neue", Helvetica, Arial, sans-serif;

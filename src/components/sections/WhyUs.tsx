@@ -92,7 +92,7 @@ export function WhyUs({ locale }: { locale: Locale }) {
                   locale={locale}
                   fill
                   bare
-                  sizes="(max-width: 900px) 100vw, 40vw"
+                  sizes="(max-width: 900px) 92vw, 40vw"
                 />
               </div>
             ))}

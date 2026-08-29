@@ -117,43 +117,111 @@ export const team: { photo: PhotoSlot; name: L; role: L }[] = [
 /* ---------------------------------------------------------------- sharhlar */
 
 /**
- * Yandex Maps'dan so'zma-so'z. Har til uchun o'sha tildagi haqiqiy sharh
- * olingan - tarjima qilinmagan.
+ * Yandex Maps'dan so'zma-so'z (2025-2026). Hech biri tarjima qilinmagan va
+ * qayta yozilmagan - faqat uzun sharhlardan boshidagi bir necha gap olingan.
+ * Sharhlarning ko'pi ruscha yozilgan, shuning uchun o'zbek ro'yxatida ham
+ * ruscha sharhlar bor: yozilganidek turibdi.
  */
 export type Review = { text: L; author: L; source: L };
 
 export const reviews: Review[] = [
   {
     text: {
-      uz: "Shu klinikada tishlarimni davolatim, aql tishlarimni oldirdim va breket qoydirdim. Hammasi juda zor. Klinika atmosferasi va vrachlari juda e'tiborli va shirinso'z.",
-      ru: "Отдельно понравилось, что заранее озвучили стоимость и никаких неожиданных доплат не было.",
+      uz: "Biz ancha qidirib yaxshi mutaxassislarni ahiri Dentaga murojaat qildik juda a'lo darajada meni va oyila a'zolarimni tishlarini davolashdi. Toshkentdagi eng yaxshi Stomotologiya shifokorlari ham juda malakali tavsiya etaman.",
+      ru: "Обратился в стоматологию Denta по рекомендации и остался очень доволен. В клинике чисто и уютно, персонал вежливый и внимательный. Лечение прошло комфортно, врач всё подробно объяснил и работал аккуратно, без лишней спешки.",
     },
-    author: { uz: "Risolat Boboyeva", ru: "khesea" },
+    author: { uz: "Zafar Soipov", ru: "khesea" },
     source: {
-      uz: "Yandex Maps · 15.10.2025",
+      uz: "Yandex Maps · 27.11.2025",
       ru: "Yandex Maps · 09.06.2026",
     },
   },
   {
     text: {
-      uz: "Biz ancha qidirib yaxshi mutaxassislarni ahiri Dentaga murojaat qildik juda a'lo darajada meni va oyila a'zolarimni tishlarini davolashdi.",
-      ru: "Мне ставили брекеты, удаляли зуб, ставили пломбы — и всё прошло на высшем уровне.",
+      uz: "Shu klinikada tishlarimni davolatim, aql tishlarimni oldirdim va breket qoydirdim. Hammasi juda zor. Klinika atmosferasi va vrachlari juda e'tiborli va shirinso'z.",
+      ru: "Мне ставили брекеты, удаляли зуб, ставили пломбы — и всё прошло на высшем уровне. Честно, больше всего я боялась удаления, но всё оказалось настолько аккуратно и профессионально, что после процедуры даже не болело!",
     },
-    author: { uz: "Zafar Soipov", ru: "Анастасия Кочубей" },
+    author: { uz: "Risolat Boboyeva", ru: "Анастасия Кочубей" },
     source: {
-      uz: "Yandex Maps · 27.11.2025",
+      uz: "Yandex Maps · 15.10.2025",
       ru: "Yandex Maps · 24.04.2025",
     },
   },
   {
     text: {
-      uz: "Отдельно понравилось, что заранее озвучили стоимость и никаких неожиданных доплат не было.",
+      uz: "Service judayam ham sifatli, Laziz aka gap bo'lishi mumkin emas, narxlani ham zo'r qilib berishdi.",
       ru: "В этой клинике нет текучки, все врачи работают по много лет, врачи все профессионалы своего дела, ну и цены конечно же приемлемые.",
     },
-    author: { uz: "khesea", ru: "gulsina" },
+    author: { uz: "Diyorbek n", ru: "gulsina" },
     source: {
-      uz: "Yandex Maps · 09.06.2026",
+      uz: "Yandex Maps · 15.06.2025",
       ru: "Yandex Maps · 23.07.2025",
+    },
+  },
+  {
+    text: {
+      uz: "Konsultatsiya bepul ekan, qulay sharoitlarga ega, jarrohlari yaxshi, xushmuomila.",
+      ru: "Запись делается через специальное приложение, что упрощает жизнь, а дата и время записи напоминается до прихода за 2 часа, и это очень удобно. Персонал очень приятный, дружелюбные и готовы вам помочь если нужна помощь.",
+    },
+    author: { uz: "Sanjar Olimov", ru: "Эъзоза Кахрамонова" },
+    source: {
+      uz: "Yandex Maps · 18.10.2025",
+      ru: "Yandex Maps · 09.06.2026",
+    },
+  },
+  {
+    text: {
+      uz: "Идеальное сочетание цены, качества и отношения! Хочу поблагодарить Дмитрия за спасение моего зуба и отличный сервис!",
+      ru: "Отличная стоматология, прошла лечение, чистку зубов и удаление восьмерок у Дмитрия, максимально комфортно, профессионально, спокойно и очень довольна результатом.",
+    },
+    author: { uz: "Наталья Федоровна", ru: "Ирина М." },
+    source: {
+      uz: "Yandex Maps · 09.04.2026",
+      ru: "Yandex Maps · 08.08.2025",
+    },
+  },
+  {
+    text: {
+      uz: "Большое спасибо стоматологу Саиде! Замечательный специалист с очень лёгкой рукой и внимательным отношением к пациентам, особенно детям. Всё прошло быстро, аккуратно и совсем не страшно.",
+      ru: "Удаляла все мудрые зубы у врача Дмитрия. Качественно выполнил свою работу, хотя у меня был сложный случай из-за положения зубов. После удаления не было никаких проблем, сильных болей.",
+    },
+    author: { uz: "Uma Hal", ru: "Феруза Назирова" },
+    source: {
+      uz: "Yandex Maps · 07.03.2026",
+      ru: "Yandex Maps · 13.06.2026",
+    },
+  },
+  {
+    text: {
+      uz: "Удаляла здесь зубы мудрости и проходила профессиональную чистку у врача Дмитрия, а также установку брекетов у ортодонта Мафтуны. Каждый визит проходил хорошо и максимально комфортно.",
+      ru: "Отдельная огромная благодарность моему ортодонту Мафтуне — настоящему профессионалу своего дела. Она всегда подробно объясняет каждую деталь, отвечает на все вопросы и остаётся на связи 24/7.",
+    },
+    author: { uz: "Kseniya Tyan", ru: "Maxbuba R." },
+    source: {
+      uz: "Yandex Maps · 19.10.2025",
+      ru: "Yandex Maps · 29.09.2025",
+    },
+  },
+  {
+    text: {
+      uz: "Уже год лечусь у врача Лазиза. С ним страх стоматологов прошел, спокойно объясняет, спрашивает об ощущениях и работает не спеша.",
+      ru: "Лечусь в этой клинике уже больше года. Отдельное спасибо стоматологу Аброру — очень внимательный и профессиональный врач.",
+    },
+    author: { uz: "Мадина Кадырова", ru: "Muhlisa Jurabaeva" },
+    source: {
+      uz: "Yandex Maps · 15.11.2025",
+      ru: "Yandex Maps · 27.11.2025",
+    },
+  },
+  {
+    text: {
+      uz: "Все очень понравилось. Отдельная благодарность стоматологу Аброру. Быстро, аккуратно и на высоком уровне. Ставили пломбу и результат меня очень обрадовал.",
+      ru: "Пару месяцев назад записалась в клинику сначала на чистку, а далее было лечение нескольких зубов и установка циркониевой коронки. Все сделали очень хорошо, осталась очень довольна!",
+    },
+    author: { uz: "Андрей Ни", ru: "NK" },
+    source: {
+      uz: "Yandex Maps · 10.04.2026",
+      ru: "Yandex Maps · 21.05.2026",
     },
   },
 ];
