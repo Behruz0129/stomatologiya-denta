@@ -63,6 +63,10 @@ export const m = {
       uz: "Narxlar so'mda. Kelishilgandan keyin qo'shimcha to'lov chiqmaydi.",
       ru: "Цены в сумах. После согласования доплат сверху не появляется.",
     },
+    payment: {
+      uz: "Naqd pul, plastik karta yoki 8 oygacha bo'lib to'lash.",
+      ru: "Наличные, пластиковая карта или рассрочка до 8 месяцев.",
+    },
     ask: { uz: "Aniq summani so'rash", ru: "Узнать точную сумму" },
   },
 

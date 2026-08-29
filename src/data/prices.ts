@@ -10,7 +10,14 @@ export type PriceRow = {
   note?: L;
 };
 
-export type PriceGroup = { title: L; rows: PriceRow[] };
+export type PriceIcon =
+  | "exam"
+  | "therapy"
+  | "braces"
+  | "crown"
+  | "surgery";
+
+export type PriceGroup = { title: L; icon: PriceIcon; rows: PriceRow[] };
 
 const REQUEST: L = { uz: "so'rov bo'yicha", ru: "по запросу" };
 
@@ -22,6 +29,7 @@ const REQUEST: L = { uz: "so'rov bo'yicha", ru: "по запросу" };
 export const priceGroups: PriceGroup[] = [
   {
     title: { uz: "Ko'rik", ru: "Осмотр" },
+    icon: "exam",
     rows: [
       {
         name: { uz: "Konsultatsiya", ru: "Консультация" },
@@ -32,6 +40,7 @@ export const priceGroups: PriceGroup[] = [
   },
   {
     title: { uz: "Terapiya", ru: "Терапия" },
+    icon: "therapy",
     rows: [
       {
         name: { uz: "Plombalash", ru: "Пломбирование" },
@@ -53,6 +62,7 @@ export const priceGroups: PriceGroup[] = [
   },
   {
     title: { uz: "Ortodontiya", ru: "Ортодонтия" },
+    icon: "braces",
     rows: [
       {
         name: { uz: "Breketlar, 2 jag'", ru: "Брекеты, 2 челюсти" },
@@ -63,6 +73,7 @@ export const priceGroups: PriceGroup[] = [
   },
   {
     title: { uz: "Ortopediya", ru: "Ортопедия" },
+    icon: "crown",
     rows: [
       {
         name: { uz: "Sirkoniy koronka", ru: "Циркониевая коронка" },
@@ -73,6 +84,7 @@ export const priceGroups: PriceGroup[] = [
   },
   {
     title: { uz: "Jarrohlik", ru: "Хирургия" },
+    icon: "surgery",
     rows: [
       {
         name: { uz: "Tish olish", ru: "Удаление зуба" },
@@ -82,22 +94,6 @@ export const priceGroups: PriceGroup[] = [
       {
         name: { uz: "Implantatsiya", ru: "Имплантация" },
         amount: "2 990 000",
-      },
-    ],
-  },
-  {
-    title: { uz: "To'lov", ru: "Оплата" },
-    rows: [
-      {
-        name: {
-          uz: "Naqd va plastik karta",
-          ru: "Наличные и пластиковая карта",
-        },
-        note: { uz: "bor", ru: "есть" },
-      },
-      {
-        name: { uz: "Bo'lib to'lash", ru: "Рассрочка" },
-        note: { uz: "8 oygacha", ru: "до 8 месяцев" },
       },
     ],
   },

@@ -37,7 +37,7 @@ export function Reviews({ locale }: { locale: Locale }) {
       />
 
       <Reveal>
-        <div className="relative min-h-[360px] max-[900px]:mb-4 min-[901px]:grid min-[901px]:min-h-0 min-[901px]:grid-cols-3 min-[901px]:gap-[1.1rem]">
+        <div className="grid max-[900px]:grid-cols-1 min-[901px]:grid-cols-3 min-[901px]:gap-[1.1rem]">
           {reviews.map((review, i) => {
             const offset = (i - active + reviews.length) % reviews.length;
             const depth = Math.min(offset, STACK.length - 1);
@@ -52,7 +52,7 @@ export function Reviews({ locale }: { locale: Locale }) {
                 }}
                 className={cn(
                   "flex flex-col gap-[1.1rem] rounded-[var(--radius-card)] border border-line bg-card p-7",
-                  "max-[900px]:absolute max-[900px]:inset-x-0 max-[900px]:top-0",
+                  "max-[900px]:col-start-1 max-[900px]:row-start-1",
                   "max-[900px]:transition-transform max-[900px]:duration-500 max-[900px]:ease-soft",
                   offset !== 0 && "pointer-events-none",
                   offset > 2 && "max-[900px]:opacity-0",
@@ -80,7 +80,7 @@ export function Reviews({ locale }: { locale: Locale }) {
         </div>
 
         {/* Nuqtalar — faqat tor ekranda */}
-        <div className="mt-8 flex justify-center gap-2 min-[901px]:hidden">
+        <div className="mt-5 flex justify-center gap-2 min-[901px]:hidden">
           {reviews.map((review, i) => (
             <button
               key={review.author.uz}
